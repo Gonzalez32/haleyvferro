@@ -6,7 +6,7 @@ export default function Home() {
     const portfolioImages = [
         {
             src: "/5296265205109508354.JPG",
-            alt: "words"
+            alt: "Letters Tattoo"
         },
         {
             src: "/6073936942209373920.JPG",
@@ -18,11 +18,11 @@ export default function Home() {
         },
         {
             src: "/6769478185712371710.JPG",
-            alt: "Fine Sheepy Art"
+            alt: "Fine Sheepy"
         },
         {
             src: "/1278793859111044208.JPG",
-            alt: "Custom Illustration"
+            alt: "Scorpion Tattoo"
         },
         {
             src: "/643377338726069948.JPG",
@@ -118,7 +118,7 @@ export default function Home() {
                         <span className="text-transparent border-t-zinc-100 bg-clip-text bg-gradient-to-r from-pink-200 via-white to-pink-200">Moonlight</span>
                     </h1>
                     <p className="text-sm md:text-base text-zinc-400 mb-12 max-w-xl mx-auto font-medium uppercase tracking-[0.2em] leading-loose">
-                        In the name of the moon, I will tattoo you.
+                        In the name of the luna, I will tattoo you.
                         <br/>
                         <br/>
                         Custom Neo-Traditional and American Traditional tattoos.
@@ -201,20 +201,23 @@ export default function Home() {
                         <span className="text-pink-500 font-bold uppercase tracking-[0.3em] text-[10px] mb-4 block">Manifesting Magic</span>
                         <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-10 uppercase italic leading-none">The Artisan of
                             <br/>
-                            Shadow & Light</h2>
+                            Shadow & Ink</h2>
                         <p className="text-lg text-zinc-400 mb-10 leading-relaxed font-light">
                             Haley V Ferro is starting her tattoo journey this spring. Her inspiration comes from animation, comics, fantasy, and video games. She has a Visual Communications Degree from Northern Illinois University.
                             Haley has always been an artist and creates using several mediums. Currently, she enjoys making digital art into prints and stickers, acrylic illustrations on wood, and screen printing on shirts.  
-                            Haley is interested in American and Neo-Trad tattoo styles with lots of color and learning how to provide great tattoos for all skin shades. She aspires toward the Bone and Blossom core values of providing an intentional space for connection, respect, and collaboration that can only come from getting a tattoo.
+                            Haley is interested in American and Neo-Trad tattoo styles with lots of color and learning how to provide great tattoos for all skin shades. 
+                            <br/>
+                            <br/>
+                            Haley aspires toward the <a href="https://www.boneandblossom.com/" target="_blank" rel="noopener noreferrer" className="text-pink-500 hover:text-pink-400 transition-colors underline">Bone and Blossom</a> core values of providing an intentional space for connection, respect, and collaboration that can only come from getting a tattoo.
                         </p>
                         <div className="grid grid-cols-2 gap-12 py-10 border-t border-white/5">
                             <div>
-                                <p className="text-4xl font-black mb-2 text-pink-500 flex items-center">500<span className="text-xs ml-1">+</span>
+                                <p className="text-4xl font-black mb-2 text-pink-500 flex items-center">20<span className="text-xs ml-1">+</span>
                                 </p>
                                 <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-zinc-600">Soul Marks</p>
                             </div>
                             <div>
-                                <p className="text-4xl font-black mb-2 text-pink-500">XII</p>
+                                <p className="text-4xl font-black mb-2 text-pink-500">0</p>
                                 <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-zinc-600">Lunar Cycles</p>
                             </div>
                         </div>
@@ -223,7 +226,7 @@ export default function Home() {
                                 onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSfRUH7DbhAd3B8B1r0kFbM09TiadtfgPJmzHsA1v9H7I2HyEw/viewform", "_blank")}
                                 className="bg-white text-black px-12 py-5 text-xs font-black uppercase tracking-[0.3em] hover:bg-pink-500 hover:text-white transition-all duration-500 flex items-center group"
                             >
-                                Book Me <span className="ml-3 group-hover:scale-125 transition-transform"><HeartIcon /></span>
+                                Book Here <span className="ml-3 group-hover:scale-125 transition-transform"><HeartIcon /></span>
                             </button>
                         </div>
                     </div>
@@ -262,8 +265,8 @@ export default function Home() {
                                     Instagram
                                     <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity"><HeartIcon/></span>
                                 </a>
-                                <a href="#" className="text-sm text-zinc-500 hover:text-pink-400 transition-colors">Facebook</a>
-                                <a href="#" className="text-sm text-zinc-500 hover:text-pink-400 transition-colors">Twitter</a>
+                                <a href="mailto:haleyvferro@gmail.com" className="text-sm text-zinc-500 hover:text-pink-400 transition-colors">Email</a>
+                                <a href="tel:630-336-5646" className="text-sm text-zinc-500 hover:text-pink-400 transition-colors">Phone</a>
                             </div>
                         </div>
                     </div>
@@ -274,11 +277,15 @@ export default function Home() {
                             <MoonIcon/>
                             <HeartIcon/>
                         </div>
+                        <div>
+                            Website By Juan C Gonzalez Jr. <HeartIcon/>
+                        </div>
                         <p className="text-zinc-800 text-[10px] uppercase font-bold tracking-[0.5em]">
-                            © {
+                        HALEY V FERRO INK. 
+                        <br/>
+                        ALL RIGHTS RESERVED. © {
                             new Date().getFullYear() 
                         }
-                            HALEY V FERRO INK. ALL RIGHTS RESERVED.
                         </p>
                     </div>
                 </div>
