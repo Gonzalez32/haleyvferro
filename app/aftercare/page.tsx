@@ -49,9 +49,8 @@ export default function Aftercare() {
                             </Link>
                             <Link href="/#contact" className="hover:text-pink-400 transition-colors">Contact</Link>
                         </div>
-                        <button onClick={
-                                () => window.open("https://docs.google.com/forms/d/e/1FAIpQLSfRUH7DbhAd3B8B1r0kFbM09TiadtfgPJmzHsA1v9H7I2HyEw/viewform", "_blank")
-                            }
+                        <Link 
+                            href="/book"
                             className="group relative px-6 py-2 overflow-hidden">
                             <div className="absolute inset-0 bg-white group-hover:bg-pink-500 transition-colors duration-500"/>
                             <span className="relative z-10 text-black text-xs font-black uppercase tracking-widest flex items-center">
@@ -59,7 +58,7 @@ export default function Aftercare() {
                                 <HeartIcon/>
                                 Now
                             </span>
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </nav>

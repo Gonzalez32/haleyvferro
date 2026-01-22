@@ -104,9 +104,8 @@ export default function Home() {
                             <Link href="/aftercare" className="hover:text-pink-400 transition-colors">Aftercare</Link>
                             <a href="#contact" className="hover:text-pink-400 transition-colors">Contact</a>
                         </div>
-                        <button onClick={
-                                () => window.open("https://docs.google.com/forms/d/e/1FAIpQLSfRUH7DbhAd3B8B1r0kFbM09TiadtfgPJmzHsA1v9H7I2HyEw/viewform", "_blank")
-                            }
+                        <Link 
+                            href="/book"
                             className="group relative px-6 py-2 overflow-hidden">
                             <div className="absolute inset-0 bg-white group-hover:bg-pink-500 transition-colors duration-500"/>
                             <span className="relative z-10 text-black text-xs font-black uppercase tracking-widest flex items-center">
@@ -114,7 +113,7 @@ export default function Home() {
                                 <HeartIcon/>
                                 Now
                             </span>
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </nav>
@@ -144,10 +143,13 @@ export default function Home() {
                         Custom Neo-Traditional and American Traditional tattoos.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                        <button className="bg-white text-black px-10 py-5 text-xs font-black uppercase tracking-[0.3em] hover:bg-pink-500 hover:text-white transition-all duration-500 flex items-center justify-center group">
+                        <Link 
+                            href="/book"
+                            className="bg-white text-black px-10 py-5 text-xs font-black uppercase tracking-[0.3em] hover:bg-pink-500 hover:text-white transition-all duration-500 flex items-center justify-center group"
+                        >
                             Start Your Journey
                             <span className="ml-3 group-hover:scale-125 transition-transform"><HeartIcon/></span>
-                        </button>
+                        </Link>
                         <button className="border border-white/10 px-10 py-5 text-xs font-black uppercase tracking-[0.3em] hover:bg-white/5 transition-all backdrop-blur-sm">
                             The Archive
                         </button>
@@ -245,12 +247,12 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="mt-12">
-                            <button 
-                                onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSfRUH7DbhAd3B8B1r0kFbM09TiadtfgPJmzHsA1v9H7I2HyEw/viewform", "_blank")}
+                            <Link 
+                                href="/book"
                                 className="bg-white text-black px-12 py-5 text-xs font-black uppercase tracking-[0.3em] hover:bg-pink-500 hover:text-white transition-all duration-500 flex items-center group"
                             >
                                 Book Here <span className="ml-3 group-hover:scale-125 transition-transform"><HeartIcon /></span>
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
