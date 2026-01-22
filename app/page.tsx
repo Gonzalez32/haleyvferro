@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 
+import Link from "next/link";
+
 export default function Home() {
     const portfolioImages = [
         {
@@ -87,7 +89,7 @@ export default function Home() {
             <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-black/60 backdrop-blur-xl">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-20">
-                        <div className="flex items-center group cursor-pointer">
+                        <Link href="/" className="flex items-center group cursor-pointer">
                             <span className="text-pink-500 transition-transform group-hover:scale-110 duration-500">
                                 <MoonIcon/>
                             </span>
@@ -95,13 +97,11 @@ export default function Home() {
                                 HALEY V FERRO<span className="text-pink-500 tracking-tighter">
                                     INK</span>
                             </span>
-                        </div>
+                        </Link>
                         <div className="hidden md:flex space-x-10 text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500">
-                            <a href="#portfolio" className="hover:text-pink-400 transition-colors flex items-center">
-                                Portfolio
-                                <span className="ml-2 scale-75 opacity-0 group-hover:opacity-100"><HeartIcon/></span>
-                            </a>
+                            <a href="#portfolio" className="hover:text-pink-400 transition-colors">Portfolio</a>
                             <a href="#about" className="hover:text-pink-400 transition-colors">Origins</a>
+                            <Link href="/aftercare" className="hover:text-pink-400 transition-colors">Aftercare</Link>
                             <a href="#contact" className="hover:text-pink-400 transition-colors">Contact</a>
                         </div>
                         <button onClick={
