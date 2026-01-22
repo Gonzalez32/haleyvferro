@@ -5,28 +5,49 @@ import Image from "next/image";
 export default function Home() {
     const portfolioImages = [
         {
+            src: "/6769478185712371710.JPG",
+            alt: "Fine Sheepy",
+            href: "https://www.instagram.com/p/DTyLfqWkukt/?img_index=1"
+        },
+        {
             src: "/5296265205109508354.JPG",
-            alt: "Letters Tattoo"
+            alt: "Letters Tattoo",
+            href: "https://www.instagram.com/p/DTar9J1jiUo/?img_index=5"
         },
         {
             src: "/6073936942209373920.JPG",
-            alt: "little Fishy"
+            alt: "little Fishy",
+            href: "https://www.instagram.com/p/DTar9J1jiUo/?img_index=4"
         },
         {
-            src: "/IMG_1983.jpg",
-            alt: "Neo-Traditional"
+            src: "/315140188609788753.JPG",
+            alt: "Cryptid",
+            href: "https://www.instagram.com/p/DTIh6u-Dh5Y/?img_index=1"
         },
         {
-            src: "/6769478185712371710.JPG",
-            alt: "Fine Sheepy"
+            src: "/4586977360685911481.JPG",
+            alt: "Business Gengar",
+            href: "https://www.instagram.com/p/DS87uavjgOw/?img_index=1"
+        },
+        {
+            src: "/6314287290915038907.JPG",
+            alt: "Pokemon Hyper Potion",
+            href: "https://www.instagram.com/p/DS6QGPhjmhC/?img_index=1"
+        },
+        {
+            src: "/IMG_2083.PNG",
+            alt: "Little Witch Cat",
+            href: "https://www.instagram.com/p/DSTm6HzjkvK/?img_index=1"
         },
         {
             src: "/1278793859111044208.JPG",
-            alt: "Scorpion Tattoo"
+            alt: "Scorpion Tattoo",
+            href: "https://www.instagram.com/haleyvferro/"
         },
         {
             src: "/643377338726069948.JPG",
-            alt: "Custom Work"
+            alt: "Custom Work",
+            href: "https://www.instagram.com/haleyvferro/"
         },
     ];
 
@@ -113,12 +134,11 @@ export default function Home() {
                         <div className="h-[1px] w-12 bg-current"/>
                     </div>
                     <h1 className="text-6xl md:text-[10rem] font-black mb-8 tracking-tighter uppercase italic leading-[0.85] text-white">
-                        Ink Artistry
+                        Carry The 
                         <br/>
                         <span className="text-transparent border-t-zinc-100 bg-clip-text bg-gradient-to-r from-pink-200 via-white to-pink-200">Moonlight</span>
                     </h1>
                     <p className="text-sm md:text-base text-zinc-400 mb-12 max-w-xl mx-auto font-medium uppercase tracking-[0.2em] leading-loose">
-                        In the name of the luna, I will tattoo you.
                         <br/>
                         <br/>
                         Custom Neo-Traditional and American Traditional tattoos.
@@ -157,8 +177,11 @@ export default function Home() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {
                         portfolioImages.map((image, index) => (
-                            <div key={index}
-                                className="group relative aspect-[3/4] overflow-hidden bg-zinc-900 border border-white/5">
+                            <a key={index}
+                                href={image.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group relative aspect-[3/4] overflow-hidden bg-zinc-900 border border-white/5 block">
                                 <Image src={
                                         image.src
                                     }
@@ -171,12 +194,12 @@ export default function Home() {
                                     <div className="flex items-center text-pink-500 mb-2">
                                         <HeartIcon/>
                                     </div>
-                                    <p className="text-lg font-black uppercase italic tracking-widest">
+                                    <p className="text-lg font-black uppercase italic tracking-widest text-white">
                                         {
                                         image.alt
                                     }</p>
                                 </div>
-                            </div>
+                            </a>
                         ))
                     } </div>
                 </div>
@@ -193,7 +216,7 @@ export default function Home() {
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-24 items-center">
                     <div className="w-full md:w-1/2 aspect-square relative">
                         <div className="w-full h-full relative [clip-path:url(#heart-clip)]">
-                            <Image src="/pic_bio.jpg" alt="The Lunar Artist" fill className="object-cover grayscale brightness-75 transition-transform duration-700 hover:scale-110"/>
+                            <Image src="/pic_bio.jpg" alt="The Lunar Artist" fill className="object-cover grayscale brightness-75 transition-all duration-700 hover:scale-110 hover:grayscale-0 hover:brightness-100"/>
                         </div>
                         <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-pink-500/20 rounded-full blur-3xl"/>
                     </div>
