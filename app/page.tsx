@@ -296,17 +296,6 @@ export default function Home() {
                             <br/>
                             Haley aspires toward the <a href="https://www.boneandblossom.com/" target="_blank" rel="noopener noreferrer" className="text-pink-500 hover:text-pink-400 transition-colors underline">Bone and Blossom</a> core values of providing an intentional space for connection, respect, and collaboration that can only come from getting a tattoo.
                         </p>
-                        <div className="grid grid-cols-2 gap-12 py-10 border-t border-white/5">
-                            <div>
-                                <p className="text-4xl font-black mb-2 text-pink-500 flex items-center">20<span className="text-xs ml-1">+</span>
-                                </p>
-                                <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-zinc-600">Soul Marks</p>
-                            </div>
-                            <div>
-                                <p className="text-4xl font-black mb-2 text-pink-500">0</p>
-                                <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-zinc-600">Lunar Cycles</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
