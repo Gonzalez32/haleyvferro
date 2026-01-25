@@ -192,10 +192,14 @@ export default function Aftercare() {
                                 href="https://www.boneandblossom.com/" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="text-zinc-500 hover:text-pink-400 transition-colors text-sm leading-loose tracking-wide uppercase font-bold"
+                                className="text-zinc-500 hover:text-pink-400 transition-colors text-sm leading-loose tracking-wide uppercase font-bold block mb-2"
                             >
                                 Bone and Blossom
                             </a>
+                            <p className="text-zinc-600 text-xs leading-relaxed tracking-wide">
+                                126 W St Charles Rd,<br/>
+                                Lombard, IL
+                            </p>
                         </div>
                         <div>
                             <h4 className="text-[10px] font-black uppercase tracking-[0.5em] mb-10 text-zinc-400">Transmissions</h4>
