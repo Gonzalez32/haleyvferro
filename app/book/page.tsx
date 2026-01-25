@@ -5,6 +5,7 @@ import Link from "next/link";
 
 export default function Book() {
     const [step, setStep] = useState(1);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const MoonIcon = () => (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="inline-block mr-2">
             <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
@@ -14,6 +15,21 @@ export default function Book() {
     const HeartIcon = () => (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="inline-block mx-1">
             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+    );
+
+    const MenuIcon = () => (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    );
+
+    const CloseIcon = () => (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
     );
 
@@ -32,7 +48,7 @@ export default function Book() {
             </div>
 
             {/* Navigation */}
-            <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-black/60 backdrop-blur-xl">
+            <nav className="fixed top-0 w-full z-[100] border-b border-white/5 bg-black/60 backdrop-blur-xl">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-20">
                         <Link href="/" className="flex items-center group cursor-pointer">
@@ -44,6 +60,8 @@ export default function Book() {
                                     INK</span>
                             </span>
                         </Link>
+
+                        {/* Desktop Navigation */}
                         <div className="hidden md:flex space-x-10 text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500">
                             <Link href="/#portfolio" className="hover:text-pink-400 transition-colors">Portfolio</Link>
                             <Link href="/#about" className="hover:text-pink-400 transition-colors">Origins</Link>
@@ -51,11 +69,47 @@ export default function Book() {
                             <Link href="/store" className="hover:text-pink-400 transition-colors">Store</Link>
                             <Link href="/#contact" className="hover:text-pink-400 transition-colors">Contact</Link>
                         </div>
-                        <div className="group relative px-6 py-2 overflow-hidden bg-white/5 border border-white/10 opacity-50 cursor-not-allowed">
-                            <span className="relative z-10 text-white text-xs font-black uppercase tracking-widest flex items-center">
-                                Booked
-                                <HeartIcon/>
-                            </span>
+
+                        <div className="flex items-center space-x-4">
+                            <div className="group relative px-6 py-2 overflow-hidden bg-white/5 border border-white/10 opacity-50 cursor-not-allowed hidden sm:block">
+                                <span className="relative z-10 text-white text-xs font-black uppercase tracking-widest flex items-center">
+                                    Booked
+                                    <HeartIcon/>
+                                </span>
+                            </div>
+
+                            {/* Mobile Menu Toggle */}
+                            <button 
+                                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                                className="md:hidden text-white p-2 hover:text-pink-500 transition-colors"
+                            >
+                                {isMenuOpen ? <CloseIcon/> : <MenuIcon/>}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Mobile Navigation Overlay */}
+                <div className={`fixed inset-x-0 bottom-0 top-20 bg-[#111111] transition-all duration-500 md:hidden ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
+                    <div className="flex flex-col items-center justify-start h-full space-y-8 text-center pt-16 pb-20 overflow-y-auto border-t border-white/10">
+                        {[
+                            { label: "Portfolio", href: "/#portfolio" },
+                            { label: "Origins", href: "/#about" },
+                            { label: "Aftercare", href: "/aftercare" },
+                            { label: "Store", href: "/store" },
+                            { label: "Contact", href: "/#contact" }
+                        ].map((link, i) => (
+                            <Link 
+                                key={i}
+                                href={link.href}
+                                onClick={() => setIsMenuOpen(false)}
+                                className="text-xl font-bold uppercase italic tracking-[0.3em] hover:text-pink-500 transition-colors"
+                            >
+                                {link.label}
+                            </Link>
+                        ))}
+                        <div className="bg-white/5 border border-white/10 opacity-50 px-12 py-4 text-xs font-black uppercase tracking-[0.3em] flex items-center shrink-0">
+                            Booked <HeartIcon/>
                         </div>
                     </div>
                 </div>
@@ -155,9 +209,16 @@ export default function Book() {
                                         INK</span>
                                 </h3>
                             </div>
-                            <p className="text-zinc-600 max-w-xs text-sm leading-loose">
+                            <p className="text-zinc-600 max-w-xs text-sm leading-loose mb-8">
                               Where the magic of the moon meets the precision of the needle.
                             </p>
+                            <Link 
+                                href="/book"
+                                className="inline-flex items-center bg-white text-black px-8 py-4 text-[10px] font-black uppercase tracking-[0.2em] hover:bg-pink-500 hover:text-white transition-all duration-500 group"
+                            >
+                                Book Your Session
+                                <span className="ml-3 group-hover:scale-125 transition-transform"><HeartIcon/></span>
+                            </Link>
                         </div>
                         <div>
                             <h4 className="text-[10px] font-black uppercase tracking-[0.5em] mb-10 text-zinc-400">Sanctuary</h4>
