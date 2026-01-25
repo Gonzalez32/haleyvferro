@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 
-export default function Aftercare() {
+export default function Store() {
     const MoonIcon = () => (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="inline-block mr-2">
             <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
@@ -43,11 +43,11 @@ export default function Aftercare() {
                         <div className="hidden md:flex space-x-10 text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500">
                             <Link href="/#portfolio" className="hover:text-pink-400 transition-colors">Portfolio</Link>
                             <Link href="/#about" className="hover:text-pink-400 transition-colors">Origins</Link>
-                            <Link href="/aftercare" className="text-pink-400 transition-colors flex items-center">
-                                Aftercare
+                            <Link href="/aftercare" className="hover:text-pink-400 transition-colors">Aftercare</Link>
+                            <Link href="/store" className="text-pink-400 transition-colors flex items-center">
+                                Store
                                 <span className="ml-2 scale-75"><HeartIcon/></span>
                             </Link>
-                            <Link href="/store" className="hover:text-pink-400 transition-colors">Store</Link>
                             <Link href="/#contact" className="hover:text-pink-400 transition-colors">Contact</Link>
                         </div>
                         <Link 
@@ -64,109 +64,50 @@ export default function Aftercare() {
                 </div>
             </nav>
 
-            {/* Hero Section */}
-            <section className="relative pt-40 pb-20 flex items-center justify-center overflow-hidden">
-                <div className="relative z-10 text-center px-4 max-w-5xl">
+            {/* Store Content */}
+            <section className="relative pt-40 pb-20 px-4 flex flex-col items-center min-h-screen">
+                <div className="max-w-4xl w-full text-center mb-24">
                     <div className="inline-flex items-center justify-center space-x-4 mb-6 text-pink-500/50">
                         <div className="h-[1px] w-12 bg-current"/>
                         <HeartIcon/>
                         <div className="h-[1px] w-12 bg-current"/>
                     </div>
-                    <h1 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter uppercase italic leading-[0.85] text-white">
-                        Sacred 
+                    <h1 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter uppercase italic leading-[0.85]">
+                        The Cosmic
                         <br/>
-                        <span className="text-transparent border-t-zinc-100 bg-clip-text bg-gradient-to-r from-pink-200 via-white to-pink-200">Healing</span>
+                        <span className="text-transparent border-t-zinc-100 bg-clip-text bg-gradient-to-r from-pink-200 via-white to-pink-200">Archive</span>
                     </h1>
                     <p className="text-sm md:text-base text-zinc-400 max-w-xl mx-auto font-medium uppercase tracking-[0.2em] leading-loose">
-                        Your journey doesn't end when the needle stops. Proper aftercare is essential for a masterpiece that lasts a lifetime.
+                        Tangible magic is manifesting. My collection of artifacts and curiosities will be arriving soon.
                     </p>
                 </div>
-            </section>
 
-            {/* Content Section */}
-            <section className="py-20 px-4 relative z-10">
-                <div className="max-w-4xl mx-auto">
-                    {/* Dermal Bandages */}
-                    <div className="mb-24 p-8 md:p-16 border border-white/5 bg-[#080808] relative overflow-hidden group">
-                        <div className="absolute top-0 right-0 p-10 opacity-5 group-hover:opacity-10 transition-opacity">
-                            <MoonIcon/>
-                        </div>
-                        <h2 className="text-3xl md:text-4xl font-black mb-8 uppercase italic tracking-tight text-pink-500">Recovery Dermal Bandages</h2>
-                        <div className="space-y-6 text-zinc-300 leading-relaxed text-lg font-light">
-                            <p>
-                                After your artist applies your dermal bandage, leave on for a <span className="text-white font-bold">maximum of 5 days</span>.
-                            </p>
-                            <p>
-                                If edges start to peel up prior to the 5 days, breaking the seal closer than an inch to the tattoo, remove the bandage.
-                            </p>
-                            <p>
-                                If you experience redness, itching or swelling around the dermal bandage remove the bandage.
-                            </p>
-                            <div className="pt-4 border-t border-white/5">
-                                <p className="italic text-pink-200/70">
-                                    If possible, leaving the bandage on for the full 5 days will result in a better heal.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Steps */}
-                    <div className="mb-24">
-                        <div className="text-center mb-16">
-                            <h2 className="text-4xl md:text-5xl font-black uppercase italic tracking-tighter mb-4">The 4-Step Ritual</h2>
-                            <p className="text-zinc-500 uppercase tracking-widest text-xs">Follow these steps after removing the bandage until fully healed</p>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            {[
-                                {
-                                    step: "01",
-                                    title: "Wash the tattoo",
-                                    content: "Wash your hands thoroughly and vigorously (you will kill more bacteria using friction than anything else). Rinse your hands thoroughly. Re-lather your hands. Apply soap and water to the tattoo and spread gently on and around your tattoo."
-                                },
-                                {
-                                    step: "02",
-                                    title: "Pat dry with white paper towel",
-                                    content: "Using paper towels ensures each one is fresh and clean, reducing the risk of exposure to bacteria. We recommend using plain white paper towels to avoid potential reactions to dyes and inks."
-                                },
-                                {
-                                    step: "03",
-                                    title: "Allow to air dry",
-                                    content: "Allowing your tattoo to air dry helps prevent excessive moisture retention when applying lotion."
-                                },
-                                {
-                                    step: "04",
-                                    title: "Apply moisturizer",
-                                    content: "We recommend using plain Lubriderm, Aveeno Baby Care, or Cetaphil moisturizers. Apply a small amount several times a day, ensuring thorough rubbing to eliminate any white residue on the skin."
-                                }
-                            ].map((item, idx) => (
-                                <div key={idx} className="p-8 border border-white/5 bg-[#080808] hover:border-pink-500/30 transition-colors">
-                                    <span className="text-5xl font-black text-pink-500/20 mb-4 block italic">{item.step}</span>
-                                    <h3 className="text-xl font-black mb-4 uppercase italic tracking-wide">{item.title}</h3>
-                                    <p className="text-zinc-400 leading-relaxed font-light">{item.content}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Showering */}
-                    <div className="p-8 md:p-16 border border-pink-500/10 bg-gradient-to-br from-[#080808] to-pink-500/5 relative overflow-hidden">
-                        <div className="flex items-start gap-6 relative z-10">
-                            <div className="hidden md:block text-pink-500 pt-2">
+                {/* Coming Soon Grid Preview */}
+                <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+                    {[
+                        { title: "Stickers", desc: "Vinyl totems for your belongings." },
+                        { title: "Limited Prints", desc: "Ink on paper, captured moonlight." },
+                        { title: "Apparel", desc: "Wearable spells and sigils." }
+                    ].map((item, i) => (
+                        <div key={i} className="group p-10 border border-white/5 bg-[#080808] hover:border-pink-500/30 transition-all duration-700 relative overflow-hidden">
+                            <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
                                 <MoonIcon/>
                             </div>
-                            <div>
-                                <h2 className="text-3xl md:text-4xl font-black mb-8 uppercase italic tracking-tight">Showering with your new tattoo</h2>
-                                <div className="space-y-6 text-zinc-300 leading-relaxed text-lg font-light">
-                                    <p>
-                                        <span className="text-white font-bold">Be quick in the shower.</span> Ignore your tattoo (do not attempt to wash or soak your tattoo under the water).
-                                    </p>
-                                    <p>
-                                        Have your hand soap, white paper towels, and moisturizer ready for when you're finished and follow the 4 steps listed above.
-                                    </p>
-                                </div>
-                            </div>
+                            <span className="text-[10px] font-black text-pink-500 uppercase tracking-[0.4em] mb-4 block">Manifesting</span>
+                            <h3 className="text-2xl font-black uppercase italic mb-4">{item.title}</h3>
+                            <p className="text-zinc-500 text-xs uppercase tracking-widest leading-loose">{item.desc}</p>
+                            <div className="mt-10 h-[1px] w-0 bg-pink-500 group-hover:w-full transition-all duration-1000"/>
                         </div>
+                    ))}
+                </div>
+
+                {/* Coming Soon Badge */}
+                <div className="mt-32 relative">
+                    <div className="absolute inset-0 bg-pink-500 blur-3xl opacity-20 animate-pulse"/>
+                    <div className="relative border border-pink-500/30 px-12 py-6 backdrop-blur-xl">
+                        <span className="text-xs md:text-sm font-black uppercase tracking-[1em] text-pink-200 italic">
+                            COMING SOON 2026
+                        </span>
                     </div>
                 </div>
             </section>
@@ -219,11 +160,7 @@ export default function Aftercare() {
                             Website By <a href="https://juangonzalez.dev/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition-colors">Juan Gonzalez</a> <HeartIcon/>
                         </div>
                         <p className="text-zinc-800 text-[10px] uppercase font-bold tracking-[0.5em]">
-                        HALEY V FERRO INK. 
-                        <br/>
-                        ALL RIGHTS RESERVED. © {
-                            new Date().getFullYear() 
-                        }
+                        HALEY V FERRO INK. © {new Date().getFullYear()}
                         </p>
                     </div>
                 </div>

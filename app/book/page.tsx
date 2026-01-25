@@ -48,6 +48,7 @@ export default function Book() {
                             <Link href="/#portfolio" className="hover:text-pink-400 transition-colors">Portfolio</Link>
                             <Link href="/#about" className="hover:text-pink-400 transition-colors">Origins</Link>
                             <Link href="/aftercare" className="hover:text-pink-400 transition-colors">Aftercare</Link>
+                            <Link href="/store" className="hover:text-pink-400 transition-colors">Store</Link>
                             <Link href="/#contact" className="hover:text-pink-400 transition-colors">Contact</Link>
                         </div>
                         <div className="group relative px-6 py-2 overflow-hidden bg-white/5 border border-white/10 opacity-50 cursor-not-allowed">
@@ -177,7 +178,6 @@ export default function Book() {
                                     <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity"><HeartIcon/></span>
                                 </a>
                                 <a href="mailto:haleyvferro@gmail.com" className="text-sm text-zinc-500 hover:text-pink-400 transition-colors">Email</a>
-                                <a href="tel:630-336-5646" className="text-sm text-zinc-500 hover:text-pink-400 transition-colors">Phone</a>
                             </div>
                         </div>
                     </div>
@@ -189,7 +189,7 @@ export default function Book() {
                             <HeartIcon/>
                         </div>
                         <div className="text-sm text-zinc-500">
-                            Website By Juan C Gonzalez Jr. <HeartIcon/>
+                            Website By <a href="https://juangonzalez.dev/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition-colors">Juan Gonzalez</a> <HeartIcon/>
                         </div>
                         <p className="text-zinc-800 text-[10px] uppercase font-bold tracking-[0.5em]">
                         HALEY V FERRO INK. © {new Date().getFullYear()}

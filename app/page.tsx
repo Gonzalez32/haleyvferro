@@ -102,6 +102,7 @@ export default function Home() {
                             <a href="#portfolio" className="hover:text-pink-400 transition-colors">Portfolio</a>
                             <a href="#about" className="hover:text-pink-400 transition-colors">Origins</a>
                             <Link href="/aftercare" className="hover:text-pink-400 transition-colors">Aftercare</Link>
+                            <Link href="/store" className="hover:text-pink-400 transition-colors">Store</Link>
                             <a href="#contact" className="hover:text-pink-400 transition-colors">Contact</a>
                         </div>
                         <Link 
@@ -286,7 +287,6 @@ export default function Home() {
                                     <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity"><HeartIcon/></span>
                                 </a>
                                 <a href="mailto:haleyvferro@gmail.com" className="text-sm text-zinc-500 hover:text-pink-400 transition-colors">Email</a>
-                                <a href="tel:630-336-5646" className="text-sm text-zinc-500 hover:text-pink-400 transition-colors">Phone</a>
                             </div>
                         </div>
                     </div>
@@ -297,8 +297,8 @@ export default function Home() {
                             <MoonIcon/>
                             <HeartIcon/>
                         </div>
-                        <div>
-                            Website By Juan C Gonzalez Jr. <HeartIcon/>
+                        <div className="text-sm text-zinc-500">
+                            Website By <a href="https://juangonzalez.dev/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition-colors">Juan Gonzalez</a> <HeartIcon/>
                         </div>
                         <p className="text-zinc-800 text-[10px] uppercase font-bold tracking-[0.5em]">
                         HALEY V FERRO INK. 
