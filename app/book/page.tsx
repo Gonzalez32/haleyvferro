@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 
 export default function Book() {
+    const [step, setStep] = useState(1);
     const MoonIcon = () => (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="inline-block mr-2">
             <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
@@ -16,7 +18,7 @@ export default function Book() {
     );
 
     // TODO: Replace this with your actual Square Appointments Booking URL
-    const squareBookingUrl = "https://book.squareup.com/appointments/nq7fhqbjswhene/location/L5JMDK54VKVPG/services";
+    const squareBookingUrl = "https://square.site/book/L5JMDK54VKVPG/haley-v-ferro-lombard-il";
 
     return (
         <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-pink-900/30 font-sans selection:text-pink-200">
@@ -67,73 +69,119 @@ export default function Book() {
                         <div className="h-[1px] w-12 bg-current"/>
                     </div>
                     <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter uppercase italic leading-none">
-                        Claim Your
+                        {step === 1 ? "Start Your" : "Secure Your"}
                         <br/>
-                        <span className="text-transparent border-t-zinc-100 bg-clip-text bg-gradient-to-r from-pink-200 via-white to-pink-200">Canvas</span>
+                        <span className="text-transparent border-t-zinc-100 bg-clip-text bg-gradient-to-r from-pink-200 via-white to-pink-200">
+                            {step === 1 ? "Journey" : "Canvas"}
+                        </span>
                     </h1>
                     <p className="text-sm md:text-base text-zinc-400 max-w-xl mx-auto font-medium uppercase tracking-[0.2em] leading-loose">
-                        <span className="text-[10px] text-pink-500/50 italic font-bold uppercase tracking-widest">
-                            Important: You must complete the 
-                            <a 
-                                href="https://docs.google.com/forms/d/e/1FAIpQLSfRUH7DbhAd3B8B1r0kFbM09TiadtfgPJmzHsA1v9H7I2HyEw/viewform" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="text-pink-500 underline mx-1 hover:text-pink-400 transition-colors"
-                            >
-                                Intake Request Form
-                            </a> 
-                            before booking.
-                        </span>
+                        {step === 1 ? (
+                            <span className="text-[10px] text-pink-500/50 italic font-bold uppercase tracking-widest">
+                                Step 1: Complete the Intake Request Form
+                            </span>
+                        ) : (
+                            <span className="text-[10px] text-pink-500/50 italic font-bold uppercase tracking-widest">
+                                Step 2: Choose your appointment time
+                            </span>
+                        )}
                         <br/>
                         <span className="text-[10px] text-pink-500/30 italic font-bold">Deposits are required to secure your appointment.</span>
                     </p>
                 </div>
 
-                <div className="w-full max-w-5xl mb-6 flex justify-center">
-                    <a 
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSfRUH7DbhAd3B8B1r0kFbM09TiadtfgPJmzHsA1v9H7I2HyEw/viewform" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-[10px] font-black uppercase tracking-[0.3em] bg-pink-500/10 text-pink-500 border border-pink-500/20 px-8 py-3 hover:bg-pink-500 hover:text-white transition-all duration-500 rounded-full"
-                    >
-                        Step 1: Fill out Intake Form
-                    </a>
-                </div>
-
-                {/* Iframe Container */}
-                <div className="w-full max-w-5xl aspect-[4/5] md:aspect-video bg-[#080808] border border-white/5 rounded-lg overflow-hidden relative z-10 shadow-2xl">
-                    <iframe 
-                        src={squareBookingUrl}
-                        width="100%"
-                        height="100%"
-                        frameBorder="0"
-                        title="Square Appointments Booking"
-                        style={{ backgroundColor: 'transparent' }}
-                    />
-                </div>
-
-                <div className="mt-20 text-center max-w-2xl">
-                    <h2 className="text-xs font-black uppercase tracking-[0.5em] text-zinc-500 mb-8">Before You Book</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                        <div className="p-6 border border-white/5 bg-zinc-900/30">
-                            <h3 className="text-pink-500 text-[10px] font-black uppercase tracking-widest mb-3">The Intake</h3>
-                            <p className="text-zinc-400 text-xs leading-relaxed">
-                                Ensure you have submitted the <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRUH7DbhAd3B8B1r0kFbM09TiadtfgPJmzHsA1v9H7I2HyEw/viewform" target="_blank" rel="noopener noreferrer" className="text-pink-500 underline hover:text-pink-400 transition-colors">Intake Request Form</a> first. I need to review and approve your design before we finalize the session.
+                {step === 1 ? (
+                    <div className="w-full max-w-2xl mx-auto p-8 md:p-16 border border-white/10 bg-zinc-900/20 backdrop-blur-sm text-center relative group">
+                        <div className="absolute -inset-1 bg-gradient-to-r from-pink-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 blur-xl"/>
+                        <div className="relative z-10">
+                            <h2 className="text-xl font-black italic uppercase mb-6 tracking-widest">The Intake Form</h2>
+                            <p className="text-zinc-400 text-xs md:text-sm mb-10 leading-relaxed uppercase tracking-widest font-light">
+                                I need to review your design and details before we finalize the session. 
+                                <br/>
+                                Please fill out the form below first.
                             </p>
-                        </div>
-                        <div className="p-6 border border-white/5 bg-zinc-900/30">
-                            <h3 className="text-pink-500 text-[10px] font-black uppercase tracking-widest mb-3">The Deposit</h3>
-                            <p className="text-zinc-400 text-xs leading-relaxed">
-                                A non-refundable deposit is required for all bookings. This goes toward the final price of your tattoo.
-                            </p>
+                            <div className="flex flex-col gap-6 items-center">
+                                <a 
+                                    href="https://docs.google.com/forms/d/e/1FAIpQLSfRUH7DbhAd3B8B1r0kFbM09TiadtfgPJmzHsA1v9H7I2HyEw/viewform" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="px-10 py-4 bg-white text-black hover:bg-pink-500 hover:text-white transition-all duration-500 text-xs font-black uppercase tracking-[0.3em] inline-block"
+                                >
+                                    Open Intake Form
+                                </a>
+                                <button 
+                                    onClick={() => setStep(2)}
+                                    className="text-pink-500/50 text-[10px] font-black uppercase tracking-[0.4em] mt-4 hover:text-pink-400 transition-colors flex items-center"
+                                >
+                                    I have already submitted my form
+                                    <span className="ml-2 scale-75"><HeartIcon/></span>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                ) : (
+                    <div className="w-full max-w-5xl flex flex-col items-center animate-in fade-in slide-in-from-bottom-4 duration-1000">
+                        <button 
+                            onClick={() => setStep(1)}
+                            className="mb-8 text-zinc-600 text-[10px] uppercase font-bold tracking-[0.3em] hover:text-pink-500 transition-colors flex items-center"
+                        >
+                            <span className="mr-2">←</span> Back to Step 1
+                        </button>
+                        
+                        {/* Iframe Container */}
+                        <div className="w-full aspect-[4/5] md:aspect-video bg-[#080808] border border-white/5 rounded-lg overflow-hidden relative z-10 shadow-2xl">
+                            <iframe 
+                                src={squareBookingUrl}
+                                width="100%"
+                                height="100%"
+                                frameBorder="0"
+                                title="Square Appointments Booking"
+                                style={{ backgroundColor: 'transparent' }}
+                            />
+                        </div>
+                    </div>
+                )}
             </section>
 
             {/* Footer */}
             <footer id="contact" className="py-32 px-4 border-t border-white/5 bg-black">
                 <div className="max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-20 mb-32">
+                        <div>
+                            <div className="flex items-center mb-8">
+                                <span className="text-pink-500 mr-3 scale-110"><MoonIcon/></span>
+                                <h3 className="text-2xl font-black tracking-widest uppercase italic">HALEY V FERRO<span className="text-pink-500">
+                                        INK</span>
+                                </h3>
+                            </div>
+                            <p className="text-zinc-600 max-w-xs text-sm leading-loose">
+                              Where the magic of the moon meets the precision of the needle.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 className="text-[10px] font-black uppercase tracking-[0.5em] mb-10 text-zinc-400">Sanctuary</h4>
+                            <a 
+                                href="https://www.boneandblossom.com/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="text-zinc-500 hover:text-pink-400 transition-colors text-sm leading-loose tracking-wide uppercase font-bold"
+                            >
+                                Bone and Blossom
+                            </a>
+                        </div>
+                        <div>
+                            <h4 className="text-[10px] font-black uppercase tracking-[0.5em] mb-10 text-zinc-400">Transmissions</h4>
+                            <div className="flex flex-col gap-4">
+                                <a href="https://www.instagram.com/haleyvferro/" className="text-sm text-zinc-500 hover:text-pink-400 transition-colors flex items-center group">
+                                    Instagram
+                                    <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity"><HeartIcon/></span>
+                                </a>
+                                <a href="mailto:haleyvferro@gmail.com" className="text-sm text-zinc-500 hover:text-pink-400 transition-colors">Email</a>
+                                <a href="tel:630-336-5646" className="text-sm text-zinc-500 hover:text-pink-400 transition-colors">Phone</a>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
                         <div className="flex items-center space-x-2 text-pink-500/20">
                             <HeartIcon/>

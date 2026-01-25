@@ -187,13 +187,14 @@ export default function Aftercare() {
                         </div>
                         <div>
                             <h4 className="text-[10px] font-black uppercase tracking-[0.5em] mb-10 text-zinc-400">Sanctuary</h4>
-                            <address onClick={
-                                    () => window.open("https://www.google.com/maps/place/126+W+St+Charles+Rd,+Lombard,+IL+60148/@41.886807,-88.0209546,17z/data=!3m1!4b1!4m6!3m5!1s0x880e52a3460ec34f:0xb916ae2222e72073!8m2!3d41.886807!4d-88.0209546!16s%2Fg%2F11c4sg_d1l?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D", "_blank")
-                                }
-                                className="text-zinc-500 not-italic text-sm leading-loose tracking-wide cursor-pointer">
-                                126 W St Charles Rd,<br/>
-                                Lombard, IL 60148
-                            </address>
+                            <a 
+                                href="https://www.boneandblossom.com/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="text-zinc-500 hover:text-pink-400 transition-colors text-sm leading-loose tracking-wide uppercase font-bold"
+                            >
+                                Bone and Blossom
+                            </a>
                         </div>
                         <div>
                             <h4 className="text-[10px] font-black uppercase tracking-[0.5em] mb-10 text-zinc-400">Transmissions</h4>

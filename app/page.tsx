@@ -142,18 +142,6 @@ export default function Home() {
                         <br/>
                         Custom Neo-Traditional and American Traditional tattoos.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                        <Link 
-                            href="/book"
-                            className="bg-white text-black px-10 py-5 text-xs font-black uppercase tracking-[0.3em] hover:bg-pink-500 hover:text-white transition-all duration-500 flex items-center justify-center group"
-                        >
-                            Start Your Journey
-                            <span className="ml-3 group-hover:scale-125 transition-transform"><HeartIcon/></span>
-                        </Link>
-                        <button className="border border-white/10 px-10 py-5 text-xs font-black uppercase tracking-[0.3em] hover:bg-white/5 transition-all backdrop-blur-sm">
-                            The Archive
-                        </button>
-                    </div>
                 </div>
 
                 {/* Floating elements */}
@@ -204,6 +192,20 @@ export default function Home() {
                             </a>
                         ))
                     } </div>
+
+                    <div className="mt-20 flex justify-center">
+                        <a 
+                            href="https://www.instagram.com/haleyvferro/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="group relative px-12 py-5 overflow-hidden bg-white hover:bg-pink-500 transition-colors duration-500"
+                        >
+                            <span className="relative z-10 text-black group-hover:text-white text-xs font-black uppercase tracking-[0.3em] flex items-center">
+                                View Full Archive
+                                <span className="ml-3 scale-75 group-hover:scale-110 transition-transform"><HeartIcon/></span>
+                            </span>
+                        </a>
+                    </div>
                 </div>
             </section>
 
@@ -246,14 +248,6 @@ export default function Home() {
                                 <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-zinc-600">Lunar Cycles</p>
                             </div>
                         </div>
-                        <div className="mt-12">
-                            <Link 
-                                href="/book"
-                                className="bg-white text-black px-12 py-5 text-xs font-black uppercase tracking-[0.3em] hover:bg-pink-500 hover:text-white transition-all duration-500 flex items-center group"
-                            >
-                                Book Here <span className="ml-3 group-hover:scale-125 transition-transform"><HeartIcon /></span>
-                            </Link>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -275,13 +269,14 @@ export default function Home() {
                         </div>
                         <div>
                             <h4 className="text-[10px] font-black uppercase tracking-[0.5em] mb-10 text-zinc-400">Sanctuary</h4>
-                            <address onClick={
-                                    () => window.open("https://www.google.com/maps/place/126+W+St+Charles+Rd,+Lombard,+IL+60148/@41.886807,-88.0209546,17z/data=!3m1!4b1!4m6!3m5!1s0x880e52a3460ec34f:0xb916ae2222e72073!8m2!3d41.886807!4d-88.0209546!16s%2Fg%2F11c4sg_d1l?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D", "_blank")
-                                }
-                                className="text-zinc-500 not-italic text-sm leading-loose tracking-wide">
-                                126 W St Charles Rd,<br/>
-                                Lombard, IL 60148
-                            </address>
+                            <a 
+                                href="https://www.boneandblossom.com/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="text-zinc-500 hover:text-pink-400 transition-colors text-sm leading-loose tracking-wide uppercase font-bold"
+                            >
+                                Bone and Blossom
+                            </a>
                         </div>
                         <div>
                             <h4 className="text-[10px] font-black uppercase tracking-[0.5em] mb-10 text-zinc-400">Transmissions</h4>
