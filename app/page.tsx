@@ -180,7 +180,7 @@ export default function Home() {
             {/* Hero Section */}
             <section className="relative h-screen flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <Image src="https://images.unsplash.com/photo-1542453089-32e77a7b27c4?q=80&w=2000&auto=format&fit=crop" alt="Dark celestial tattoo art" fill className="object-cover opacity-30 grayscale contrast-125" priority/>
+                    <Image src="https://images.unsplash.com/photo-1542453089-32e77a7b27c4?q=80&w=2000&auto=format&fit=crop" alt="Dark celestial tattoo art" fill className="object-cover opacity-30 md:grayscale contrast-125" priority/>
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent"/> {/* Subtle Heart Glow */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-pink-500/10 rounded-full blur-[120px] pointer-events-none"/>
                 </div>
@@ -238,7 +238,7 @@ export default function Home() {
                                         image.alt
                                     }
                                     fill
-                                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"/>
+                                    className="object-cover md:grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"/>
                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-10">
                                     <div className="flex items-center text-pink-500 mb-2">
                                         <HeartIcon/>
@@ -279,7 +279,7 @@ export default function Home() {
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-24 items-center">
                     <div className="w-full md:w-1/2 aspect-square relative">
                         <div className="w-full h-full relative [clip-path:url(#heart-clip)]">
-                            <Image src="/pic_bio.jpg" alt="The Lunar Artist" fill className="object-cover grayscale brightness-75 transition-all duration-700 hover:scale-110 hover:grayscale-0 hover:brightness-100"/>
+                            <Image src="/pic_bio.jpg" alt="The Lunar Artist" fill className="object-cover md:grayscale brightness-75 transition-all duration-700 hover:scale-110 hover:grayscale-0 hover:brightness-100"/>
                         </div>
                         <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-pink-500/20 rounded-full blur-3xl"/>
                     </div>
